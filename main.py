@@ -85,25 +85,6 @@ user_id = os.getenv("USER_ID")
 webhook_url_s = os.getenv("WEBHOOK_URL")
 
 # SETTING
-
-@bot.hybrid_command(name='밴-체크봇-상태', description='봇 상태를 확인합니다.')
-async def check_bot(interaction: discord.Interaction):
-    response = requests.get(url=RENDER_URL)
-    if response.status_code == 200 or 304:
-        embed = discord.Embed(
-            title=":white_check_mark: 여전히 작동중!! :white_check_mark:",
-            description=f"```ansi\n\u001b[1;32m응답 코드 : {response.status_code}\n```\n```ansi\n\u001b[1;32m응답 메시지 : {response.text}\n```", 
-            color=65280
-        )
-        await interaction.send(embed=embed, ephemeral=True)
-    else:
-        embed = discord.Embed(
-            title=":x: 작동 중이지 않습니다! :x:",
-            description=f"```ansi\n\u001b[1;32m응답 코드 : {response.status_code}\n```\n```ansi\n\u001b[1;32m응답 메시지 : {response.text}\n```", 
-            color=16711680
-        )
-        await interaction.send(embed=embed, ephemeral=True)
-
 @bot.hybrid_command(name='설정-상태', description='당신의 설정 상태를 확인합니다.')
 async def setting_status(interaction: discord.Interaction):
     embed = discord.Embed(
