@@ -5,6 +5,8 @@ from discord.ext import commands
 import asyncio
 from datetime import datetime
 import aiohttp
+from keep_alive import keep_alive
+keep_alive()
 
 class Bot(commands.Bot):
     def __init__(self, intents: discord.Intents, **kwargs):
