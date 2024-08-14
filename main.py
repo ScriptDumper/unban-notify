@@ -79,7 +79,6 @@ class Bot(commands.Bot):
 intents = discord.Intents.all()
 bot = Bot(intents=intents)
 
-RENDER_URL = os.getenv("RENDER_URL")
 TOKEN = os.getenv("BOT_TOKEN")
 user_id = os.getenv("USER_ID")
 webhook_url_s = os.getenv("WEBHOOK_URL")
